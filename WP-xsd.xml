@@ -1,0 +1,100 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+<xs:element name="DataTemplate">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TextBlock" minOccurs="0">
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml" ref="xaml:Name"/>
+<xs:attribute type="xs:string" name="Text"/>
+<xs:attribute type="xs:string" name="Margin"/>
+<xs:attribute type="xs:string" name="Style"/>
+<xs:attribute xmlns:clr="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" ref="clr:TiltEffect.SuppressTilt"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+<xs:element name="HyperlinkButton" minOccurs="0">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:clr="clr-namespace:PhoneToolkitSample.LocalControls;assembly=PhoneToolkitSample8" ref="clr:HeaderedContentControl"/>
+</xs:sequence>
+<xs:attribute type="xs:string" name="NavigateUri"/>
+<xs:attribute type="xs:string" name="Style"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Rectangle" minOccurs="0">
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute type="xs:byte" name="Height"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="Grid">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Grid.RowDefinitions">
+<xs:complexType>
+<xs:choice maxOccurs="unbounded" minOccurs="0">
+<xs:element name="RowDefinition">
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute type="xs:string" name="Height" use="optional"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+<xs:element name="StackPanel">
+<xs:annotation>
+<xs:documentation>
+LOCALIZATION NOTE: To localize the displayed strings copy their values to appropriately named keys in the app's neutral language resource file (AppResources.resx) then replace the hard-coded text value between the attributes' quotation marks with the binding clause whose path points to that string name. For example: Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" This binding points to the template's string resource named "ApplicationTitle". Adding supported languages in the Project Properties tab will create a new resx file per language that can carry the translated values of your UI strings. The binding in these examples will cause the value of the attributes to be drawn from the .resx file that matches the CurrentUICulture of the app at run time. TitlePanel contains the name of the application and page title
+</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element name="TextBlock">
+<xs:complexType>
+<xs:simpleContent>
+<xs:extension base="xs:string">
+<xs:attribute xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml" ref="xaml:Name"/>
+<xs:attribute type="xs:string" name="Text"/>
+<xs:attribute type="xs:string" name="Style"/>
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml" ref="xaml:Name"/>
+<xs:attribute type="xs:byte" name="Grid.Row"/>
+<xs:attribute type="xs:string" name="Margin"/>
+</xs:complexType>
+</xs:element>
+<xs:element name="Grid">
+<xs:annotation>
+<xs:documentation>ContentPanel - place additional content here</xs:documentation>
+</xs:annotation>
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:clr="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone" ref="clr:LongListSelector"/>
+</xs:sequence>
+<xs:attribute xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml" ref="xaml:Name"/>
+<xs:attribute type="xs:byte" name="Grid.Row"/>
+<xs:attribute type="xs:string" name="Margin"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+<xs:attribute xmlns:xaml="http://schemas.microsoft.com/winfx/2006/xaml" ref="xaml:Name"/>
+<xs:attribute type="xs:string" name="Background"/>
+</xs:complexType>
+</xs:element>
+</xs:schema>
